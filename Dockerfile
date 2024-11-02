@@ -6,5 +6,6 @@ RUN apt-get update && \
 COPY index.html /var/www/html/index.html
 COPY calculadora.cgi /usr/lib/cgi-bin/calculadora.cgi
 RUN chmod 755 /usr/lib/cgi-bin/calculadora.cgi
+RUN chmod 755 /var/www/html/index.html
 EXPOSE 80
 CMD ¨=["apachectl","-D","FOREGRUND"]

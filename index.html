@@ -6,5 +6,17 @@
 <title>calculadora</title>
 <style></style>
 </head>
-<body><div class="calculadora"><div class="encabezado">calculadora.com</div></div></body>
+<body>
+    <div class="calculadora">
+        <div class="encabezado">calculadora.com</div>
+        <textarea id="entrada" placeholder="Ingresa una expresión"></textarea>
+        <div class="contenedor-resultado">
+            <form action="calculadora.cgi" method="post">
+                <button type="submit">=</button>
+            </form>
+            <input type="text" id="resultado" class="resultado" placeholder=" " readonly>
+        </div>
+    </div>
+
+</body>
 </html>
