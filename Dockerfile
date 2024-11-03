@@ -5,7 +5,6 @@ RUN apt-get update && \
     apt-get clean
 COPY index.html /var/www/html/index.html
 COPY calculadora.cgi /usr/lib/cgi-bin/calculadora.cgi
-RUN chmod 755 /usr/lib/cgi-bin/calculadora.cgi
-RUN chmod 755 /var/www/html/index.html
+RUN chmod 755 /usr/lib/cgi-bin/*.cgi
 EXPOSE 80
-CMD ¨=["apachectl","-D","FOREGRUND"]
+CMD ["apache2ctl", "-D", "FOREGROUND"]
