@@ -6,8 +6,7 @@ use CGI qw(:standard);
 my $entrada = param('q');
 my $resultado;
 
-
-if ($entrada =~ /^[0-9+\-]+$/) {
+if ($entrada =~ /^[0-9\s\+\-\*\/]+$/) {
     my @tokens = split(' ', $entrada);
     $resultado = 0; 
     my $operador = '+';
@@ -18,15 +17,28 @@ if ($entrada =~ /^[0-9+\-]+$/) {
             $operador = '+';
         } elsif ($token eq '-') {
             $operador = '-'; 
+        } elsif ($token eq '*') {
+            $operador = '*'; 
+        } elsif ($token eq '/') {
+            $operador = '/'; 
         } else {
             if ($operador eq '+') {
                 $resultado += $token;  
             } elsif ($operador eq '-') {
                 $resultado -= $token;  
+            } elsif ($operador eq '*') {
+                $resultado = ($resultado == 0) ? $token : $resultado * $token;  
+            } elsif ($operador eq '/') {
+                if ($token != 0) {
+                    $resultado = ($resultado == 0) ? $token : $resultado / $token;  
+                } else {
+                    $resultado = 'Error: División por cero';
+                }
             }
         }
+    }
 } else {
-    $resultado = 'Error';
+    $resultado = 'Error'; 
 }
 
 print header('text/html');
