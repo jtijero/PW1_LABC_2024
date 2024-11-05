@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Google</title>
+    <style>
+        body {
+            background-image: url('fondo.jpg'); 
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #202124;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .logo {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .barraDeBusqueda {
+            width: 600px;
+            height: 40px;
+            border: 1px solid #dcdcdc;
+            border-radius: 24px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+        }
+
+        .barraDeBusqueda input {
+            flex-grow: 1;
+            border: none;
+            background: none;
+            outline: none;
+            font-size: 16px;
+            color: #202124;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .buttons-container button {
+            background-color: #f8f9fa;
+            color: #202124;
+            border: 1px solid #dcdcdc;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 0 10px;
+            border-radius: 24px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .buttons-container button:hover {
+            background-color: #e8e8e8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Google</div>
+        <div class="barraDeBusqueda">
+            <form id="search-form" action="/cgi-bin/search.cgi" method="get" style="flex-grow: 1;">
+                <input type="text" name="q" id="search-input" placeholder="Buscar..." required>
+            </form>
+        </div>
+        <div class="buttons-container">
+            <button type="submit" form="search-form" formaction="/cgi-bin/search.cgi">Buscar con Google</button>
+            <button type="submit" form="search-form" formaction="/cgi-bin/image_search.cgi">Buscar Imágenes</button>
+        </div>
+    </div>
+</body>
+</html>
+
