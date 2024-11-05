@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador v1.02</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Busqueda csv</div>
+        <div class="barraDeBusqueda">
+            <input type="text" name="q" id="entrada" placeholder="Escribe algun dato sobre la universidad..">
+        </div>
+        <div class="buttons-container">
+            <form action="/cgi-bin/busquedaU.cgi" method="get">
+                <input type="hidden" name="q" id="botonparabuscar">
+                <button type="submit" onclick="">Buscar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
