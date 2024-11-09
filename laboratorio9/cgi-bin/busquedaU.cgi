@@ -4,10 +4,11 @@ use warnings;
 use CGI;
 use CGI::Carp qw(fatalsToBrowser);
 use utf8;
+use Encode qw(decode encode);
 
 my $cgi = CGI->new;
 print $cgi->header(-type => 'text/html', -charset => 'utf-8');
-my $query = $cgi->param('q') || '';
+my $query = decode('UTF-8', $cgi->param('q') || '');
 
 print <<HTML;
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ print <<HTML;
     <meta charset="UTF-8">
     <title>Resultados de búsqueda</title>
     <style>
-        body { font-family: Arial, sans-serif; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
     </style>
 </head>
 <body>
@@ -27,8 +28,21 @@ print <<HTML;
     </form>
 HTML
 
+# Abrir y leer el archivo CSV
+open(my $fh, '<:encoding(UTF-8)', '/usr/lib/cgi-bin/universidades.csv') or die "No se pudo abrir el archivo: $!";
+my $encabezado = <$fh>;
+
+my $resultados = 0;
+my @resultados_html;
+
 # Mensaje de búsqueda
 print "<p>Buscando: $query</p>";
 
-print "</body></html>";
+if ($resultados == 0) {
+    print "<p>No se encontraron resultados para \"$query\".</p>";
+} else {
+    print "<p>Se encontraron $resultados resultados para \"$query\".</p>";
+    print join("", @resultados_html);
+}
 
+print "</div></body></html>";
