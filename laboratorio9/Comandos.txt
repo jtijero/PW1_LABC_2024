@@ -1,0 +1,37 @@
+sudo docker exec -it tu_contenedor bash
+cpan CGI
+verifica la instalacion de modulos() from perl latest
+:
+sudo docker exec -it tu_contenedor perl -MCPAN -e 'print join("\n", keys %INC);'
+
+Pasos para Convertir un CSV a UTF-8
+sudo apt update
+sudo apt install libc-bin --instalar iconv, viene preinstalado
+
+verificar en que codificacion esta el archivo:
+file -i /ruta/al/archivo.csv
+luccianotijero@debianlt:~$ file -i /home/luccianotijero/Documents/laboratorio9.4/public/universidades.csv
+/home/luccianotijero/Documents/laboratorio9.4/public/universidades.csv: text/plain; charset=iso-8859-1
+
+Convertir el Archivo a UTF-8: 
+iconv -f iso-8859-1 -t UTF-8 /home/luccianotijero/Documents/laboratorio9.4/public/universidades.csv
+/home/luccianotijero/Documents/laboratorio9.4/public/universidades.csv -o /home/luccianotijero/Documents/laboratorio9.4/public/universidades.csv
+/home/luccianotijero/Documents/laboratorio9.4/public/universidades_utf8.csv
+---iso-8859-1 es un ejemplo de la codificación original. Si conoces la codificación actual, cámbiala 
+---universidades_utf8.csv será el nuevo archivo convertido a UTF-8.
+verificando permisos
+ls -l /home/luccianotijero/Documents/laboratorio9.4/public/universidades.csv
+habilitar permisos
+chmod 644 /home/luccianotijero/Documents/laboratorio9.4/public/universidades.csv
+
+convirtiendo
+iconv -f ISO-8859-1 -t UTF-8 /home/luccianotijero/Documents/laboratorio9.4/public/universidades.csv -o /home/luccianotijero/Documents/laboratorio9.4/public/universidades_utf8.csv
+
+se puede reemplazar el archivo con mv
+
+file -i /home/luccianotijero/Documents/laboratorio9.4/public/universidades_utf8.csv
+
+para asegurar que no tiene BOM (Byte Order Mark),
+hexdump -C /home/luccianotijero/Documents/laboratorio9.4/public/universidades.csv | head
+
+
