@@ -2,6 +2,8 @@
 use strict;
 use warnings;
 use CGI;
+use CGI::Carp qw(fatalsToBrowser);
+use utf8;
 
 my $cgi = CGI->new;
 print $cgi->header(-type => 'text/html', -charset => 'utf-8');
@@ -13,6 +15,9 @@ print <<HTML;
 <head>
     <meta charset="UTF-8">
     <title>Resultados de búsqueda</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+    </style>
 </head>
 <body>
     <h1>Resultados de búsqueda</h1>
