@@ -1,0 +1,58 @@
+git --version
+git config --global user.name "jtijero"
+git config --global user.email "jtijero@unsa.edu.pe"
+en windows echo hola mundo > "index.html" en debian touch index.html o vim
+git init --> vista hidden items
+code . --> se abre en visual studio --en windows
+*se edita el index*
+git status --> esta en rojo los apuntes y el index
+git add .
+git commit -m "mi primer commit"
+se edito el index otra vez --git add --git commit -m "modificaciòn"
+git log --> ver commits
+git checkout  ias475 --> * el codigo del commit* 
+<!-- archivo cambio automaticamente -->
+git log --> ahora aparece HEAD sin master
+--se crea nueva rama con eso 
+git branch -- para ver las ramas
+git switch master -- para volver a la rama principal
+git branch
+git log --volvio a la normalidad
+si quieres volver al primer commit y realizar cambios se puede hacer:
+git checkout "codigo de primer commit", sin las comillas
+*se edita el index*
+git add .
+git commit -m "chau mundo"
+git log
+si quieres guardar estos cambios para crear una nueva rama -->
+--> git switch -c "rama2" <-- "" el nombre de la rama
+git log -- ver que se guardo
+git branch
+git switch master
+*se convierte esto en lo que teniamos antes*
+git log --ver como cambia el segundo commit
+cls --limpiar linea de comandos en windows
+clear --en linux
+--------git y github------------
+crear cuenta iniciar sesion ir a perfil, denerar repositorio sin tocar nada copiar codigo de este
+ya hicimos algunos pasos asi que no hay que seguir todo lo que nos aparece
+
+git remote add origin https://github.com/jtijero/mi-repositorio.git <--1
+--git add remote -- agregar un remote en este caso github
+--de nombre origin, es el que se le pone por defecto
+--y el link que se copio del repositorio
+()conectar repositorio local con el r de github
+git push origin master --empujar la rama master <--2
+--y a veces cuando colocan este comando por primera vez -->1 o este -->2 les pedira autenticacion de github
+asi que inicias sesion por linea de comandos o por navegador
+
+--Ejecuta el siguiente comando en tu terminal para agregar el directorio como seguro, ()en caso tu no hayas creado el respositorio necesiaras esto
+git config --global --add safe.directory /home/usuario/Documents/Trabajo3_PWeb1_C/Trabajo3_PWeb1_C
+-- y permisos:  Puedes cambiar la propiedad del directorio a tu usuario actual
+sudo chown -R usuario:usuario /home/usuario/Documents/Trabajo3_PWeb1_C/Trabajo3_PWeb1_C
+
+
+
+
+
+

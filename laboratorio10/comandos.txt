@@ -1,0 +1,5 @@
+docker exec -it <CONTAINER_ID> /bin/bash
+cd /usr/lib/cgi-bin/
+ls -l
+chmod +x *.cgi
+service --status-all

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultas SQL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Hubot+Sans:ital,wght@1,300&family=Monoton&family=Montserrat+Alternates:ital,wght@0,200;1,200&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+</head>
+<style>
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 10px; /* Reducido el padding */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  max-width: 450px; /* Ancho máximo ajustado */
+}
+
+.logo {
+  font-size: 7.5em;
+  color: #333;
+  white-space: nowrap;
+  overflow-x: visible;
+  position: relative;
+  z-index: 2;
+  margin-top: -0.6em; 
+  margin-left: -2.6em; 
+  margin-right: -1.5em; 
+  letter-spacing: 0.1em; /* Espaciado entre letras */
+  font-weight: bold; /* Hacer el título más grueso */
+}
+
+.subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 0.8em;
+  color: black;
+  margin: 10px 0;
+}
+
+.CGIS {
+  display: flex;
+  justify-content: flex-start; /* Alinear a la izquierda */
+  align-items: flex-start;
+  margin-top: 20px; /* Ajustado el margen superior */
+  padding-left: 20px; /* Espacio a la izquierda para los enlaces */
+  padding-right: 20px; /* Espacio a la derecha para los enlaces */
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  font-family: Arial, sans-serif;
+  font-size: 1em; /* Tamaño mayor que el subtítulo */
+  margin: 5px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff; /* Color de los enlaces */
+}
+
+li::before {
+  content: "• "; /* Punto antes de cada enlace */
+  color: black; /* Color del punto */
+}
+
+.footer {
+  font-family: Arial, sans-serif;
+  font-size: 0.7em; /* Tamaño más pequeño */
+  color: black;
+  margin-top: 10px; /* Espacio superior para separar del contenido */
+  text-align: center; /* Centrar el texto del footer */
+}
+</style>
+<body>
+    <div class="container">
+        <div class="logo">PELICULAS SQL</div> 
+        <div class="footer">Usando Docker, MariaDB y Perl</div> <!-- Frase movida -->
+        <div class="CGIS">
+        <ul>
+            <li><a href="cgi-bin/mostraractor.cgi">Mostrar Actor con ID 5</a></li>
+            <li><a href="cgi-bin/basedatos2.cgi">Mostrar Actores con ID >= 4</a></li>
+            <li><a href="cgi-bin/busquedaporaño.cgi">Buscar Películas por Año</a></li>
+        </ul>
+        </div>
+    </div>
+</body>
+</html>
